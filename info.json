@@ -8,8 +8,8 @@
   "description": "Adds copies of electric poles, including modded ones, with integrated lamps.",
   "factorio_version": "2.0",
   "dependencies": [
-    "base",
-    "flib >= 0.6.0",
+    "base >= 2.0",
+    "flib >= 0.15.0",
     "(?)ShinyBobGFX",
     "(?)ShinyBob_Icons",
     "(?)reskins-bobs",
