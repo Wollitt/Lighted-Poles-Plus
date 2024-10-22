@@ -1,14 +1,14 @@
 {
-  "name": "LightedPolesPlus",
-  "version": "1.10.1",
+  "name": "Lighted-Poles-Plus",
+  "version": "2.0.0",
   "title": "Lighted Electric Poles +",
   "author": "Optera",
   "contact": "https://forums.factorio.com/memberlist.php?mode=viewprofile&u=21729",
   "homepage": "",
   "description": "Adds copies of electric poles, including modded ones, with integrated lamps.",
-  "factorio_version": "1.1",
+  "factorio_version": "2.0",
   "dependencies": [
-    "base >= 1.1.0",
+    "base",
     "flib >= 0.6.0",
     "(?)ShinyBobGFX",
     "(?)ShinyBob_Icons",
