@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.2
+Date: 2024-10-21
+  Changes:
+    - Added setting to choose pole weight with default as 40kg
+    - Updated polish translations
+    - Added hungarian translations
+---------------------------------------------------------------------------------------------------
 Version: 2.0.1
 Date: 2024-10-21
   Changes:

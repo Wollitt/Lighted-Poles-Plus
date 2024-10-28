@@ -48,4 +48,12 @@ data:extend({
     allow_blank = false,
     default_value = "lamp",
   },
+  {
+    type = "string-setting",
+    name = "lepp_tech_pole_weight",
+    order= "be",
+    setting_type = "startup",
+    allowed_values = {"standard", "realistic"},
+    default_value = "realistic"
+  }
 })

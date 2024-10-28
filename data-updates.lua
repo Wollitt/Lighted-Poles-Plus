@@ -29,6 +29,14 @@ local fallback_technology = settings.startup["lepp_tech_fallback"].value
 local pole_names = {} -- dictionary [original pole item name] -> lighted pole entity/item/recipe name
 local lightedPoles = {}
 
+function tableToString(t)
+  local result = "{ "
+  for k, v in pairs(t) do
+    result = result .. tostring(k) .. " = " .. tostring(v) .. ", "
+  end
+  return result .. "}"
+end
+
 -- finds all recipes by result
 function find_recipe_by_results(search_products)
   local found_recipes = {} -- recipes producing the product
@@ -85,7 +93,7 @@ for _, item in pairs (data.raw["item"]) do
 
       local newName = "lighted-"..pole.name
 
-      -- log("[LEP+] copying entity "..tostring(pole.name).." to "..tostring(newName))
+      --log("[LEP+] copying entity "..tostring(pole.name).." to "..tostring(newName))
       local newPole = flib.copy_prototype(pole, newName, true)
       newPole.icons = flib.create_icons(pole, lep_icons_layer) or lep_icons_layer
       newPole.localised_name = {"entity-name.lighted-pole", {"entity-name." .. pole.name}}
@@ -93,12 +101,23 @@ for _, item in pairs (data.raw["item"]) do
         newPole.next_upgrade = "lighted-"..newPole.next_upgrade
       end
 
-      -- log("[LEP+] copying item "..tostring(item.name).." to "..tostring(newName))
+      local poleWeight;
+      local realisticPoleWeight = settings.startup["lepp_tech_pole_weight"].value
+
+      if realisticPoleWeight == "standard" then
+        poleWeight = 20;
+      else
+        poleWeight = 40;
+      end
+
+      --log("[LEP+] copying item "..tableToString(item).." to "..tostring(newName))
       pole_names[item.name] = newName --save name for technology lookup
       local newItem = flib.copy_prototype(item, newName, true)
       newItem.icons = flib.create_icons(item, lep_icons_layer) or lep_icons_layer
       newItem.localised_name = newPole.localised_name
       newItem.order = (item.order or "").."-0"
+      newItem.weight = poleWeight * 1000;
+      --log("[LEP+] New item "..tableToString(newItem).." to "..tostring(newName))
       newPole.icons = newPole.icons or newItem.icons -- use item icon for lighted pole in case base pole entity had none
 
       local hidden_lamp = flib.copy_prototype(data.raw["lamp"]["small-lamp"], newName.."-lamp", true)
