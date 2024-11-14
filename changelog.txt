@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.3
+Date: 2024-11-14
+  Changes:
+    - Changed icon placing, so it won't be blocked by quality
+    ---------------------------------------------------------------------------------------------------
 Version: 2.0.2
-Date: 2024-10-21
+Date: 2024-10-28
   Changes:
     - Added setting to choose pole weight with default as 40kg
     - Updated polish translations

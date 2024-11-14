@@ -10,7 +10,7 @@ local flib = require('__flib__.data-util')
 
 local light_scale = settings.startup["lepp_light_size_factor"].value
 local light_size_limit = settings.startup["lepp_light_max_size"].value
-local lep_icons_layer = { { icon = "__Lighted-Poles-Plus__/graphics/icons/lighted.png", icon_size = 32, tint = {r=1, g=1, b=1, a=0.85} } }
+local lep_icons_layer = { { icon = "__Lighted-Poles-Plus__/graphics/icons/lighted_2.png", icon_size = 32, tint = {r=1, g=1, b=1, a=0.85} } }
 local pole_entity_whitelist = {}
 for name in gmatch(settings.startup["lepp_pole_whitelist"].value, '([^, *]+)') do
   pole_entity_whitelist[name] = true
